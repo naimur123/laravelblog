@@ -71,6 +71,7 @@ class LoginController extends Controller
      * After Logout the redirect location
      */
     protected function loggedOut(){
+        Session::flush();
         return redirect($this->logout) ?: redirect()->back();
     }
 
